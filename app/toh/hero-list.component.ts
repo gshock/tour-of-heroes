@@ -2,8 +2,12 @@ import { Component, OnInit } from 'angular2/core';
 import { Router } from 'angular2/router';
 
 import {Hero} from '../hero';
-import {HeroDetailComponent} from '../hero-detail.component';
 import {HeroService2} from './hero.service2';
+
+@Component({
+  selector: 'hero-list',
+  templateUrl: 'app/toh/hero-list.component.html'
+})
 
 export class HeroListComponent implements OnInit {
   constructor (private _heroService: HeroService2) {}

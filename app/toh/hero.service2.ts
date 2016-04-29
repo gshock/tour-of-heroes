@@ -1,12 +1,15 @@
 import {Injectable}     from 'angular2/core';
-import {Http, Response} from 'angular2/http';
+import {Http, Response, Headers} from 'angular2/http';
 import {Hero}           from '../hero';
 import {Observable}     from 'rxjs/Observable';
+
+
 
 @Injectable()
 export class HeroService2 {
   constructor (private http: Http) {}
-  private _heroesUrl = 'app/heroes';  // URL to web api
+  //private _heroesUrl = 'app/api/heroes';  // URL to web api
+  private _heroesUrl = 'heroes.json'; // URL to JSON file
   getHeroes (): Observable<Hero[]> {
     return this.http.get(this._heroesUrl)
                     .map(this.extractData)
