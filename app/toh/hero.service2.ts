@@ -32,6 +32,7 @@ export class HeroService2 {
       throw new Error('Bad response status: ' + res.status);
     }
     let body = res.json();
+    console.log(body.data);
     return body.data || {};
   }
   private handleError(error: any) {
