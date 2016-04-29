@@ -20,11 +20,12 @@ export class HeroListComponent implements OnInit {
                        heroes => this.heroes = heroes,
                        error =>  this.errorMessage = <any>error);
   }
-  // addHero (name: string) {
-  //   if (!name) {return;}
-  //   this._heroService.addHero(name)
-  //                    .subscribe(
-  //                      hero  => this.heroes.push(hero),
-  //                      error =>  this.errorMessage = <any>error);
-  // }
+  
+  addHero (name: string) {
+    if (!name) {return;}
+    this._heroService.addHero(name)
+                     .subscribe(
+                       hero  => this.heroes.push(hero),
+                       error =>  this.errorMessage = <any>error);
+  }
 }
